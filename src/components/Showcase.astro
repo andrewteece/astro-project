@@ -8,7 +8,7 @@ export interface Props {
   showExtra?: boolean;
 }
 
-const { heading = "Welcome To The Astro Crash Course!", text = "Build super fast HTML-first websites using your favorite JavaScrit  frameworks" } = Astro.props as Props;
+const { heading = "Welcome To The Astro Crash Course!", text = "Build super fast HTML-first websites using your favorite JavaScrit  frameworks", showExtra = false } = Astro.props as Props;
 ---
 
 
@@ -19,6 +19,8 @@ const { heading = "Welcome To The Astro Crash Course!", text = "Build super fast
         {text}
       </p>
     </div>
+
+    {showExtra && <>
     <div class="showcase-img">
       <img class="logos" src={ logos } alt="" />
       <img class="logos-small" src={ logosSmall } alt="" />
@@ -27,6 +29,8 @@ const { heading = "Welcome To The Astro Crash Course!", text = "Build super fast
     <p class="showcase-demo">
       <small>This is a demo website</small>
     </p>
+    
+    </>}
   </section>
 
   <style>
